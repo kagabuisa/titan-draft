@@ -1,0 +1,15 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/titan.zenjji.com/html;
+        index index.html;
+
+        server_name titan.zenjji.com www.titan.zenjji.com;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+
+sudo ln -s /etc/nginx/sites-available/titan.zenjji.com /etc/nginx/sites-enabled/
